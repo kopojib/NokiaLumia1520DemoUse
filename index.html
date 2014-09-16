@@ -1,71 +1,315 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>NokiaLumia1520DemoUse by kopojib</title>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Площадка боевой техники, Поклонная гора, сделано с помощью Nokia Lumia 1520</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+			}
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>NokiaLumia1520DemoUse</h1>
-        <p>All files needed for small virtual excursion with Oculus Rift support.</p>
+			a {
+				color: #ffffff;
+			}
+			
+			#footer {
+				position: absolute;
+				bottom: 100px;
+				left:100px;
+			}
+			
+			#text {
+				text-shadow: -10px 10px 0px #00e6e6,
+                 -20px 20px 0px #01cccc,
+                 -30px 30px 0px #00bdbd;
+				 position: absolute;
+				 top: 100px;
+				 right:100px;
+			}
+			
+			.button {
+				-moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+				-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  				box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  				background-color: #EEE;
+  				background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZiZmJmYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UxZTFlMSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  				background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fbfbfb), color-stop(100%, #e1e1e1));
+  				background: -moz-linear-gradient(top, #fbfbfb, #e1e1e1);
+  				background: -webkit-linear-gradient(top, #fbfbfb, #e1e1e1);
+  				background: linear-gradient(to bottom, #fbfbfb, #e1e1e1);
+  				display: inline-block;
+  				vertical-align: middle;
+  				*vertical-align: auto;
+  				*zoom: 1;
+  				*display: inline;
+  				border: 1px solid #d4d4d4;
+  				height: 32px;
+  				line-height: 30px;
+  				padding: 0px 25.6px;
+  				font-weight: 300;
+  				font-size: 14px;
+  				font-family: "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
+  				color: #666;
+  				text-shadow: 0 1px 1px white;
+  				margin: 0;
+  				text-decoration: none;
+  				text-align: center; 
+			}
+  				/* line 44, ../scss/partials/_buttons.scss */
+			.button:hover, .button:focus {
+    			background-color: #EEE;
+    			background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2RjZGNkYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    			background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dcdcdc));
+    			background: -moz-linear-gradient(top, #ffffff, #dcdcdc);
+    			background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+    			background: linear-gradient(to bottom, #ffffff, #dcdcdc); 
+			}
+			
+  			/* line 48, ../scss/partials/_buttons.scss */
+  			.button:active {
+    			-moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    			-webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    			box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    			text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+    			background: #eeeeee;
+    			color: #bbbbbb; 
+			}
+			
+  			/* line 54, ../scss/partials/_buttons.scss */
+  			.button:focus {
+    			outline: none; 
+			}
 
-        <p class="view"><a href="https://github.com/kopojib/NokiaLumia1520DemoUse">View the Project on GitHub <small>kopojib/NokiaLumia1520DemoUse</small></a></p>
+			/* line 60, ../scss/partials/_buttons.scss */
+			input.button, button.button {
+  				height: 34px;
+  				cursor: pointer;
+  				-webkit-appearance: none; 
+			}
 
+			/* line 67, ../scss/partials/_buttons.scss */
+			.button-block {
+				display: block; 
+			}
 
-        <ul>
-          <li><a href="https://github.com/kopojib/NokiaLumia1520DemoUse/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/kopojib/NokiaLumia1520DemoUse/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/kopojib/NokiaLumia1520DemoUse">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+			/* line 72, ../scss/partials/_buttons.scss */
+			.button.disabled,
+			.button.disabled:hover,
+			.button.disabled:focus,
+			.button.disabled:active,
+			input.button:disabled,
+			button.button:disabled {
+				-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  				-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  				opacity: 0.8;
+  				background: #EEE;
+  				border: 1px solid #DDD;
+  				text-shadow: 0 1px 1px white;
+  				color: #CCC;
+  				cursor: default;
+  				-webkit-appearance: none; 
+			}
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+			/* line 89, ../scss/partials/_buttons.scss */
+			.button-wrap {
+    			background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UzZTNlMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    			background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f2f2f2));
+    			background: -moz-linear-gradient(top, #e3e3e3, #f2f2f2);
+    			background: -webkit-linear-gradient(top, #e3e3e3, #f2f2f2);
+    			background: linear-gradient(to bottom, #e3e3e3, #f2f2f2);
+    			-moz-border-radius: 200px;
+    			-webkit-border-radius: 200px;
+    			border-radius: 200px;
+    			-moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    			-webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    			box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    			padding: 10px;
+    			display: inline-block; 
+			}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+			/* line 195, ../scss/partials/_buttons.scss */
+			.button-circle {
+      			-moz-border-radius: 240px;
+        		-webkit-border-radius: 240px;
+        		border-radius: 240px;
+        		-moz-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+        		-webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+        		box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+        		width: 50px;
+				line-height: 50px;
+				height: 50px;
+				padding: 0px;
+				border-width: 4px;
+				font-size: 16px; 
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function loadPoint(file){
+				texture = THREE.ImageUtils.loadTexture( 'textures/' + file + '.jpg', {}, function() {
+					mesh.material.map = texture;
+				} );
+			}
+			
+			
+			//функция для переключения способа просмотра: через монитор или шлем виртуальной реальности.
+			function switchView () {
+				oculus_enabled =! oculus_enabled;
+				
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				effect.setSize( window.innerWidth, window.innerHeight );
+			}
+		</script>
+		
+		
+		<div id="container">
+			
+			<div id="footer">
+				<!--кнопки для показа точек обзора -->
+				<a href="#" class="button button-circle" onclick="loadPoint(1)">1</a>
+				<a href="#" class="button button-circle" onclick="loadPoint(2)">2</a>
+				<a href="#" class="button button-circle" onclick="loadPoint(3)">3</a>
+				<a href="#" class="button button-circle" onclick="loadPoint(4)">4</a>
+				<a href="#" class="button button-circle" onclick="loadPoint(5)">5</a>
+				<a href="#" class="button button-circle" onclick="switchView()">OR</a>
+			</div>
+		</div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+		<script src="js/three.min.js"></script>
+		<script src="js/OculusRiftEffect.js"></script>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+		<script>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+			var camera, scene, renderer, mesh, oculus_enabled = false;
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+			var isUserInteracting = false,
+			onMouseDownMouseX = 0, onMouseDownMouseY = 0,
+			lon = 0, onMouseDownLon = 0,
+			lat = 0, onMouseDownLat = 0,
+			phi = 0, theta = 0;
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+			init();
+			animate();
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+			function init() {
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+				var container;
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+				container = document.getElementById( 'container' );
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/kopojib">kopojib</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+				camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 1100 );
+				camera.target = new THREE.Vector3( 0, 0, 0 );
+
+				scene = new THREE.Scene();
+
+				var geometry = new THREE.SphereGeometry( 500, 60, 40 );
+				geometry.applyMatrix( new THREE.Matrix4().makeScale( -1, 1, 1 ) );
+
+				var material = new THREE.MeshBasicMaterial( {
+					map: THREE.ImageUtils.loadTexture( 'textures/1.jpg' ) //обратите внимание, здесь указывается первая точка обзора, то есть просмотр можно начать с любой, достаточно указать другой файл с панорамой.
+				} );
+
+				mesh = new THREE.Mesh( geometry, material );
+				
+				scene.add( mesh );
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+				
+				effect = new THREE.OculusRiftEffect( renderer, {worldScale: 100} );
+				effect.setSize( window.innerWidth, window.innerHeight );
+
+				document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+				
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				effect.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function onDocumentMouseDown( event ) {
+
+				event.preventDefault();
+
+				isUserInteracting = true;
+
+				onPointerDownPointerX = event.clientX;
+				onPointerDownPointerY = event.clientY;
+
+				onPointerDownLon = lon;
+				onPointerDownLat = lat;
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				if ( isUserInteracting === true ) {
+
+					lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
+					lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+
+				}
+
+			}
+
+			function onDocumentMouseUp( event ) {
+
+				isUserInteracting = false;
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				update();
+
+			}
+
+			function update() {
+
+				if ( isUserInteracting === false ) {
+
+					lon += 0.1;
+
+				}
+
+				lat = Math.max( - 85, Math.min( 85, lat ) );
+				phi = THREE.Math.degToRad( 90 - lat );
+				theta = THREE.Math.degToRad( lon );
+
+				camera.target.x = 500 * Math.sin( phi ) * Math.cos( theta );
+				//camera.target.y = 500 * Math.cos( phi );   //При подготовке панорамных фотографий с большим углом обзора нужно раскомментировать данную строчку, чтобы можно было "смотреть" вверх и вниз.
+				camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
+
+				camera.lookAt( camera.target );
+				
+				if (oculus_enabled)
+				{
+					effect.render( scene, camera );
+				} else
+				{
+					renderer.render( scene, camera );
+				}
+					
+			}
+		//присылайте, пожалуйста, ваши вопросы на электронную почту andreyazbarov@gmail.com
+		</script>
+	</body>
 </html>
